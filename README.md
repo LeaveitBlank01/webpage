@@ -91,30 +91,6 @@ Before setting up this project, ensure you have the following installed on your 
    - Example: `http://localhost/user-portal/login.php`
 3. You should see the login page
 
-## Usage
-
-### Creating a New Account
-
-1. Click on **"Sign Up"** link on the login page
-2. Fill in the registration form:
-   - Full Name
-   - Email (must be unique)
-   - Password
-3. Click **"Sign Up"** button
-4. You'll be redirected to the login page with a success message
-
-### Logging In
-
-1. Enter your registered email and password
-2. Click **"Login"** button
-3. You'll be redirected to the dashboard
-
-### Dashboard Features
-
-- View welcome message with your name
-- Access user details from the sidebar menu
-- Logout with confirmation popup
-
 ## Project Structure
 
 ```
@@ -130,16 +106,6 @@ webpage/
 └── README.md              # This file
 ```
 
-## Database Schema
-
-The `users` table has the following structure:
-
-- `id` - Primary key (auto-increment)
-- `fullname` - User's full name (VARCHAR 100)
-- `email` - User's email address (VARCHAR 100, unique)
-- `password` - Hashed password (VARCHAR 255)
-- `created_at` - Account creation timestamp
-
 ## Security Features
 
 - Passwords are hashed using PHP's `password_hash()` function
@@ -149,53 +115,6 @@ The `users` table has the following structure:
 - XSS protection with `htmlspecialchars()`
 - Protected routes (dashboard requires authentication)
 
-## Troubleshooting
-
-### Issue: "Connection failed" error
-
-**Solution:**
-- Verify MySQL service is running in XAMPP Control Panel
-- Check database credentials in `db.php`
-- Ensure the database user exists and has proper privileges
-- Verify database name is correct
-
-### Issue: Page not loading / 404 error
-
-**Solution:**
-- Check that Apache service is running
-- Verify the project folder is in the correct `htdocs` directory
-- Check the URL path matches your folder name
-- Clear browser cache
-
-### Issue: Database errors
-
-**Solution:**
-- Ensure you've run both SQL setup files (`database_setup.sql` and `create_user.sql`)
-- Verify the database `user_portal` exists
-- Check that the MySQL user has proper permissions
-- Try recreating the database and user
-
-### Issue: Session not working
-
-**Solution:**
-- Check PHP session configuration in `php.ini`
-- Ensure cookies are enabled in your browser
-- Verify file permissions on the project directory
-
-### Issue: Styling not loading
-
-**Solution:**
-- Check that `style.css` is in the same directory as PHP files
-- Verify the CSS file path in HTML `<link>` tags
-- Clear browser cache
-
-## Default Credentials
-
-**Database User:**
-- Username: `mark`
-- Password: `1234`
-
-**⚠️ Important**: Change these default credentials before deploying to production!
 
 ## Development Notes
 
@@ -204,28 +123,9 @@ The `users` table has the following structure:
 - The application uses prepared statements to prevent SQL injection
 - Responsive design works on desktop and mobile devices
 
-## Future Enhancements
-
-Potential improvements you could add:
-- Password reset functionality
-- Email verification
-- User profile editing
-- Remember me feature
-- Two-factor authentication
-- Admin panel
-
-## Support
-
-If you encounter any issues during setup:
-1. Check the troubleshooting section above
-2. Verify all prerequisites are installed correctly
-3. Ensure XAMPP services are running
-4. Check PHP error logs in XAMPP control panel
 
 ## License
 
 This project is provided as-is for educational purposes.
 
 ---
-
-**Happy Coding! 🚀**
